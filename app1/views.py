@@ -27,9 +27,17 @@ from .models import Student
 # AnonymousUser
 # <QueryDict: {'name': ['abc'], 'surname': ['pqr'], 'age': ['28']}>
 # 28
-
 def welcome(request):
+    print(request.user)
     return render(request,"home.html")      # hyper text markup language
+
+
+
+
+
+
+
+
 
 # query params - Query Parameters
 # afetr url http://127.0.0.1:8000/home/?name=abc&surname=pqr&age=28

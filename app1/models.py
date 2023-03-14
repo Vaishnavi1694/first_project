@@ -116,3 +116,7 @@ class Subject(CommonClass):
 
 #     def __str__(self):
 #         return self.name
+
+class Employee(models.model):
+    name = models.CharField(max_length=100)
+    

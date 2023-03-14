@@ -1088,3 +1088,15 @@ from django.db import connection
 
 # studs = Student.objects.using(SECOND_DATABASE).all()
 # print(studs)
+
+
+print(Student.objects.filter(dept__name = "IT"))
+# output
+# <QuerySet [<Student: Resh>, <Student: Ashwini>, <Student: priyanka>, <Student: Sanket>]>
+
+
+from django.db import connection
+cursor = connection.cursor()
+# cursor.execute('''SELECT * FROM student where id > 8;''') raw sql
+data = cursor.fetchmany()
+print(data) 

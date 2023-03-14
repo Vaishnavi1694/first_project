@@ -119,4 +119,7 @@ class Subject(CommonClass):
 
 class Employee(models.model):
     name = models.CharField(max_length=100)
-    
+    salary = models.IntegerField()
+
+    class Meta:
+        db_table = "emp"

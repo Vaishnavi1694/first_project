@@ -1094,11 +1094,12 @@ print(Student.objects.filter(dept__name = "IT"))
 # output
 # <QuerySet [<Student: Resh>, <Student: Ashwini>, <Student: priyanka>, <Student: Sanket>]>
 
-
-from django.db import connection
-cursor = connection.cursor()
-# cursor.execute('''SELECT * FROM student where id > 8;''') raw sql
-data = cursor.fetchmany(4)
-for i in data:
-    print(i)
-print(data) 
+def fun():
+    from django.db import connection
+    cursor = connection.cursor()
+    cursor.execute('''SELECT * FROM student where id > 8;''') raw sql
+    data = cursor.fetchmany(4)
+    # for i in data:
+    #     print(i)
+    # print(data) 
+    return data
